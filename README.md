@@ -120,3 +120,23 @@ Taxas
 - id
 - margem_lucro (%)
 - impostos (%)
+
+### Rodando com Docker
+
+- Certifique-se de que Docker e Docker Compose estão instalados e rodando
+- Abra o terminal da máquina e navegue até a pasta onde estão os arquivos do projeto
+- Construa e rode os contêineres:
+  
+```
+docker-compose up --build
+```
+- A documentação da API estará disponível no Swagger: [http://127.0.0.1:8000/apidocs](http://127.0.0.1:8000/docs)
+- Para parar os containers:
+  
+```
+docker-compose down
+```
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.

@@ -20,6 +20,10 @@ Futuramente será integrado com site da loja para centralização de gestão, co
 
 Aualmente o projeto é um MVP que abranje o cadastro e controle de produtos, facilitando o processo de criação de kits e divulgação em plataformas sociais e site.
 
+## 🛠️ Acesso
+
+- A documentação da API Autenticação estará disponível no Swagger: [http://127.0.0.1:8001/docs](http://127.0.0.1:8001/docs)
+
 ## 🛠️ Funcionalidades
 
 1. Cadastro de Insumos
@@ -130,11 +134,43 @@ Taxas
 ```
 docker-compose up --build
 ```
-- A documentação da API estará disponível no Swagger: [http://127.0.0.1:8000/apidocs](http://127.0.0.1:8000/docs)
+
 - Para parar os containers:
   
 ```
 docker-compose down
+```
+### Rodando Migrações com Alembic
+Através do terminal do VSCode:
+
+1. Entrar no container do microsserviço
+
+```
+docker compose exec nomedocontainer bash
+```
+
+2. Criar uma nova migration
+
+Substitua "mensagem_da_migration" por algo descritivo, como "criar_tabela_usuario":
+```
+alembic revision --autogenerate -m "mensagem_da_migration"
+```
+
+3. Revisar a migration
+
+Abra o arquivo recém-criado em alembic/versions/ e confira se as operações estão corretas. Ajuste manualmente se necessário.
+
+4. Aplicar a migration no banco
+
+```
+alembic upgrade head
+```
+
+5. Conferir versão atual do banco
+
+Mostra a versão aplicada mais recentemente:
+```
+alembic current
 ```
 
 ## 📄 Licença

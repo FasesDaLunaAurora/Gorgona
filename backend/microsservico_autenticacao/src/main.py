@@ -2,6 +2,7 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/")
-def read_root():
-    return {"message": "Microsserviço de Autenticação ativo!"}
+from src.routers.auth_routers import auth_router
+
+app.include_router(auth_router)
+

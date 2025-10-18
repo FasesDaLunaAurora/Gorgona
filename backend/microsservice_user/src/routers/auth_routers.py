@@ -6,7 +6,7 @@ from src.models.auth_models import Usuario as UsuarioModel
 from src.services.auth_services import UsuarioService
 
 
-auth_router = APIRouter(prefix="/auth", tags=["Autenticação"])
+auth_router = APIRouter(prefix="/auth", tags=["auth"])
 
 @auth_router.post("/criar_usuario")
 async def criar_usuario(schema: UsuarioSchema, sessao: Session = Depends(pegar_sessao)):

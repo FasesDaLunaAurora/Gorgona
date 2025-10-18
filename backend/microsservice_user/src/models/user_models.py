@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean
 from src.database import Base
 
-class Usuario(Base):
+class UsuarioModel(Base):
     __tablename__ = 'usuarios'
 
     id = Column("id", Integer, primary_key=True, autoincrement=True)

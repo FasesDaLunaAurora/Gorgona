@@ -1,12 +1,19 @@
 from pydantic import BaseModel
 from typing import Optional
 
-class Usuario(BaseModel):
+class UsuarioSchema(BaseModel):
     nome: str
     email: str
     senha: str
     ativo: Optional[bool] = True
     admin: Optional[bool] = False
+
+    class Config:
+        from_attributes = True
+
+class LoginSchema(BaseModel):
+    email: str
+    senha: str
 
     class Config:
         from_attributes = True

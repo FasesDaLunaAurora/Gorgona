@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from src.models.user_models import Usuario as UsuarioModel
+from src.models.user_models import UsuarioModel
 from src.utils import criptografar_senha
 
 class UsuarioService:

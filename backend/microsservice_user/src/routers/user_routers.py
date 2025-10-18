@@ -1,14 +1,14 @@
 from fastapi import APIRouter, Depends, HTTPException
 from src.database import pegar_sessao
 from sqlalchemy.orm import Session
-from src.schemas.auth_schemas import Usuario as UsuarioSchema
-from src.models.auth_models import Usuario as UsuarioModel
-from src.services.auth_services import UsuarioService
+from backend.microsservice_user.src.schemas.user_schemas import Usuario as UsuarioSchema
+from src.models.user_models import Usuario as UsuarioModel
+from backend.microsservice_user.src.services.user_services import UsuarioService
 
 
-auth_router = APIRouter(prefix="/auth", tags=["auth"])
+user_router = APIRouter(prefix="/user", tags=["user"])
 
-@auth_router.post("/criar_usuario")
+@user_router.post("/criar_usuario")
 async def criar_usuario(schema: UsuarioSchema, sessao: Session = Depends(pegar_sessao)):
     '''
     Rota de criação de usuário

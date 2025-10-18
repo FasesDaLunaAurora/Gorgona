@@ -22,7 +22,7 @@ Aualmente o projeto é um MVP que abranje o cadastro e controle de produtos, fac
 
 ## 🛠️ Acesso
 
-- A documentação da API Autenticação estará disponível no Swagger: [http://127.0.0.1:8001/docs](http://127.0.0.1:8001/docs)
+- A documentação da API Usuário estará disponível no Swagger: [http://127.0.0.1:8001/docs](http://127.0.0.1:8001/docs)
 
 ## 🛠️ Funcionalidades
 

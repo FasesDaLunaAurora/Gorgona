@@ -15,42 +15,18 @@ services:
 
   # Microsserviço de autenticação (usuários e login)
   autenticacao:
-    build: ./backend/microsservico_autenticacao  # Caminho do Dockerfile
-    container_name: gorgona_autenticacao
+    build: ./backend/microsservice_user  # Caminho do Dockerfile
+    container_name: gorgona_user
     ports:
-      - "${AUTENTICACAO_PORT}:8000"  # Porta no host, 8000 no container
+      - "${MICROSSERVICE_USER_PORT}:8000"  # Porta no host, 8000 no container
     env_file:
-      - ./backend/microsservico_autenticacao/.env  # Injeta variáveis de ambiente
+      - ./backend/microsservice_user/.env  # Injeta variáveis de ambiente
     volumes:
-    - ./backend/microsservico_autenticacao/src:/app/src  # <- mapeia código
-    - ./backend/microsservico_autenticacao/alembic.ini:/app/alembic.ini  # <- mapeia alembic.ini
-    - ./backend/microsservico_autenticacao/alembic:/app/alembic        # pasta de migrations
+    - ./backend/microsservice_user/src:/app/src  # <- mapeia código
+    - ./backend/microsservice_user/alembic.ini:/app/alembic.ini  # <- mapeia alembic.ini
+    - ./backend/microsservice_user/alembic:/app/alembic        # pasta de migrations
     depends_on:
       - db                          # Garante que o DB suba primeiro
-
-#   # Microsserviço de produtos (estoque e kits)
-#   produto:
-#     build: ./backend/microsservico_produto
-#     container_name: gorgona_produto
-#     ports:
-#       - "8002:8000"                 # Porta 8002 no host, 8000 no container
-#     env_file:
-#       - ./backend/microsservico_produto/.env
-#     depends_on:
-#       - db
-#       - autenticacao                # Espera o serviço de autenticação subir
-
-#   # Microsserviço de taxas (margem e entrega)
-#   taxa:
-#     build: ./backend/microsservico_taxa
-#     container_name: gorgona_taxa
-#     ports:
-#       - "8003:8000"
-#     env_file:
-#       - ./backend/microsservico_taxa/.env
-#     depends_on:
-#       - db
-#       - autenticacao
 
 # Volumes para persistir dados do banco
 volumes:

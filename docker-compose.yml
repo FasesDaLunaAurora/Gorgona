@@ -23,6 +23,8 @@ services:
       - ./backend/microsservico_autenticacao/.env  # Injeta variáveis de ambiente
     volumes:
     - ./backend/microsservico_autenticacao/src:/app/src  # <- mapeia código
+    - ./backend/microsservico_autenticacao/alembic.ini:/app/alembic.ini  # <- mapeia alembic.ini
+    - ./backend/microsservico_autenticacao/alembic:/app/alembic        # pasta de migrations
     depends_on:
       - db                          # Garante que o DB suba primeiro
 

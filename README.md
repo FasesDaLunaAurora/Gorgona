@@ -173,6 +173,15 @@ Mostra a versão aplicada mais recentemente:
 alembic current
 ```
 
+### Códigos HTTP usados na aplicação
+
+200 - OK - Sucesso genérico <br>
+400 - Bad Request - Parâmetros errados, JSON mal formatado, validação falhou
+401 - Unauthorized - Usuário não enviou token ou token inválido
+404 - Not Found - Recurso inexistente (usuario, produto, etc)
+409 - Conflict - Duplicidade (email já existe, por exemplo)
+
+
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.

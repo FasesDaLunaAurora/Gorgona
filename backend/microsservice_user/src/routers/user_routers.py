@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException
 from src.database import pegar_sessao
 from sqlalchemy.orm import Session
-from backend.microsservice_user.src.schemas.user_schemas import Usuario as UsuarioSchema
+from src.schemas.user_schemas import Usuario as UsuarioSchema
 from src.models.user_models import Usuario as UsuarioModel
-from backend.microsservice_user.src.services.user_services import UsuarioService
+from src.services.user_services import UsuarioService
 
 
 user_router = APIRouter(prefix="/user", tags=["user"])

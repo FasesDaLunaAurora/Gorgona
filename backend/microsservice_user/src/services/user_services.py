@@ -9,6 +9,8 @@ import os
 SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = os.getenv("ALGORITHM")
 ACCESS_TOKEN_EXPIRE_MINUTES= os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES")
+TESTE= os.getenv("TESTE")
+
 
 bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
@@ -16,7 +18,7 @@ class UsuarioService:
 
     @staticmethod
     def criar_usuario(sessao: Session, nome: str, email: str, senha: str, ativo: bool = True, admin: bool = False):
-        
+        print(f"Variável TESTE em user_services.py: {TESTE}")
         senha_criptografada = bcrypt_context.hash(senha)
         novo_usuario = UsuarioModel(nome=nome, email=email, senha=senha_criptografada, ativo=ativo, admin=admin)
         sessao.add(novo_usuario)

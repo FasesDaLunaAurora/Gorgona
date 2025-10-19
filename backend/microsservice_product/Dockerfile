@@ -10,10 +10,7 @@ ENV PYTHONUNBUFFERED=1
 COPY requirements.txt .
 
 # Instala dependências do sistema e pacotes Python
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    && pip install --no-cache-dir -r requirements.txt \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copia o restante do código 
 COPY ./src ./src

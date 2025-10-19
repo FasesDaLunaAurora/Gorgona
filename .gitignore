@@ -18,7 +18,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-env.py
 
 # ---- Secrets ----
 *.env

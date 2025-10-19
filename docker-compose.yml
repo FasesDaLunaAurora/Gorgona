@@ -13,8 +13,8 @@ services:
     ports:
       - "${POSTGRES_PORT}:5432"
 
-  # Microsserviço de autenticação (usuários e login)
-  autenticacao:
+  # Microsserviço de usuario (usuários e login)
+  usuario:
     build: ./backend/microsservice_user  # Caminho do Dockerfile
     container_name: gorgona_user
     ports:

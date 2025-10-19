@@ -28,6 +28,21 @@ services:
     depends_on:
       - db                          # Garante que o DB suba primeiro
 
+# Microsserviço de produto
+  produto:
+    build: ./backend/microsservice_product
+    container_name: gorgona_product
+    ports:
+      - "${MICROSSERVICE_PRODUCT_PORT}:8000"
+    env_file:
+      - ./backend/microsservice_product/.env
+    volumes:
+    - ./backend/microsservice_product/src:/app/src
+    - ./backend/microsservice_product/alembic.ini:/app/alembic.ini
+    - ./backend/microsservice_product/alembic:/app/alembic
+    depends_on:
+      - db
+
 # Volumes para persistir dados do banco
 volumes:
   db_data:

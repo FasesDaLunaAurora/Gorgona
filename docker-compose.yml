@@ -20,7 +20,7 @@ services:
     ports:
       - "${MICROSSERVICE_USER_PORT}:8000"  # Porta no host, 8000 no container
     env_file:
-      - ./backend/microsservice_user/.env  # Injeta variáveis de ambiente
+      - .env  # Injeta variáveis de ambiente
     volumes:
     - ./backend/microsservice_user/src:/app/src  # <- mapeia código
     - ./backend/microsservice_user/alembic.ini:/app/alembic.ini  # <- mapeia alembic.ini
@@ -35,7 +35,7 @@ services:
     ports:
       - "${MICROSSERVICE_PRODUCT_PORT}:8000"
     env_file:
-      - ./backend/microsservice_product/.env
+      - .env
     volumes:
     - ./backend/microsservice_product/src:/app/src
     - ./backend/microsservice_product/alembic.ini:/app/alembic.ini

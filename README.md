@@ -84,7 +84,7 @@ E fica no valor de R$ 129,90."
 
 ## 📁 Modelagem de dados
 
-Insumo
+Material
 
 - id
 - nome
@@ -93,7 +93,7 @@ Insumo
 - tamanho (ex: unidade, 200g, 1L)
 - categoria_insumo_id
 
-Categoria de Insumo
+Categoria do Material
 
 - id
 - nome (comida, bebida, cosmético, etc.)
@@ -112,7 +112,7 @@ Categoria de Kit
 - id
 - nome (café da manhã, maternidade, etc.)
 
-KitInsumo (tabela de ligação Kit ↔ Insumos)
+KitMaterial (tabela de ligação Kit ↔ Insumos)
 
 - id
 - kit_id
